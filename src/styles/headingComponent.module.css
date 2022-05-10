@@ -1,0 +1,14 @@
+.spanUnderline{
+width: 80px;
+/* margin-right: auto!important;
+margin-left: auto!important; */
+/* border-bottom: 1px solid #dee2e6!important; */
+display: block!important;
+border-width: 2px;
+border-style: solid;
+border-color: #20c997 ;
+position: absolute;
+bottom: 5px;
+left:50%;
+transform: translate(-50%,-50%);
+}

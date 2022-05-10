@@ -1,24 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import { createTheme, Stack, ThemeProvider } from "@mui/material";
+import NavBar from "./components/NavBar";
+import Layout from "./pages/layout";
+import "./index.css";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#111418",
+      dark: "#212529",
+    },
+    secondary: {
+      main: "#20c997",
+    },
+  },
+  breakpoints: {
+    values: {
+      xss: 375,
+      xs: 0,
+      tablet: 768,
+      laptop: 1024,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Stack
+        direction={{ xs: "column", laptop: "row" }}
+        justifyContent={{ laptop: "space-between" }}
+        // sx={{ flexDirection: { lg: "row" } }}
+      >
+        {/* <> */}
+        <NavBar></NavBar>
+        <Layout />
+        {/* </> */}
+      </Stack>
+    </ThemeProvider>
   );
 }
 
